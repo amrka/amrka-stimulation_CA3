@@ -166,7 +166,7 @@ reg_T1_2_temp.inputs.args = '--float'
 reg_T1_2_temp.inputs.collapse_output_transforms = True
 reg_T1_2_temp.inputs.fixed_image = template_brain
 reg_T1_2_temp.inputs.initial_moving_transform_com = True
-reg_T1_2_temp.inputs.num_threads = 1
+reg_T1_2_temp.inputs.num_threads = 4
 reg_T1_2_temp.inputs.output_inverse_warped_image = True
 reg_T1_2_temp.inputs.output_warped_image = True
 reg_T1_2_temp.inputs.sigma_units = ['vox']*3
@@ -458,4 +458,4 @@ stimulation_preproc.connect([
 stimulation_preproc.write_graph(graph2use='colored', format='png', simple_form=True)
 
 # stimulation_preproc.run(plugin='SLURM',plugin_args={'dont_resubmit_completed_jobs': True, 'max_jobs':50})
-stimulation_preproc.run('MultiProc', plugin_args={'n_procs': 32})
+stimulation_preproc.run('MultiProc', plugin_args={'n_procs': 8})
