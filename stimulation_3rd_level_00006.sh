@@ -62,18 +62,18 @@ done
 
 # change file names to contain gp name
 
-python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name.py \
+python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py \
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz -10 -7
 
-python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name.py \
+python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py \
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz -10 -7
 
 
-python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name.py \
+python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py \
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz -10 -7
 
 
-python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name.py \
+python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py \
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz -10 -7
 
 #=====================================================================================================================
