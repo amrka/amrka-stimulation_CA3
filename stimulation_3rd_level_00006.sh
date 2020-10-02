@@ -1,15 +1,15 @@
 #!/bin/bash
 #copy 1st level images to have a perspective what's active what's not
 
-# for folder in /media/amr/Amr_4TB/Work/stimulation/Data_CA3/*;do 
-# 	cd $folder; 
-# 	cp *.png /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder}.png; 
-# 	cd ..; 
+# for folder in /media/amr/Amr_4TB/Work/stimulation/Data_CA3/*;do
+# 	cd $folder;
+# 	cp *.png /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder}.png;
+# 	cd ..;
 # done
 
-# for folder in /media/amr/Amr_4TB/Work/stimulation/Data_CA3/*;do 
-# 	mkdir /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder}; 
-# 	mv  /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/*_${folder}.png /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder}/; 
+# for folder in /media/amr/Amr_4TB/Work/stimulation/Data_CA3/*;do
+# 	mkdir /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder};
+# 	mv  /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/*_${folder}.png /media/amr/Amr_4TB/Work/stimulation/CA3_1st_level_images/${folder}/;
 # done
 
 
@@ -80,7 +80,7 @@ python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name.py \
 #Delete subjects with no activation: 005, 028, 052
 #females no. 81 79
 
-imrm /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/*/*_005.nii.gz 
+imrm /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/*/*_005.nii.gz
 
 imrm /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/*/*_028.nii.gz
 
@@ -99,13 +99,13 @@ fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/c
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/*_cope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii.gz
 
 fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/varcope1_05Hz.nii.gz \
-/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/*_varcope1_*.nii.gz 
+/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/*_varcope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/varcope1_05Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/varcope1_05Hz.nii.gz
 
 
 
@@ -116,13 +116,13 @@ fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/c
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/*_cope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii.gz
 
 fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/varcope1_10Hz.nii.gz \
-/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/*_varcope1_*.nii.gz 
+/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/*_varcope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/varcope1_10Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/varcope1_10Hz.nii.gz
 
 
 
@@ -133,13 +133,13 @@ fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/c
 
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii.gz
 
 fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/varcope1_20Hz.nii.gz \
-/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/*_varcope1_*.nii.gz 
+/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/*_varcope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/varcope1_20Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/varcope1_20Hz.nii.gz
 
 
 #======================================================================================================================
@@ -149,14 +149,14 @@ fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/c
 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/*_cope1_*.nii.gz
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii.gz
 
 fslmerge -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/varcope1_40Hz.nii.gz \
-/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/*_varcope1_*.nii.gz 
+/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/*_varcope1_*.nii.gz
 
 
 
-fslchfiletype NIFTI /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/varcope1_40Hz.nii.gz
+gunzip /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/varcope1_40Hz.nii.gz
 
 
 #=====================================================================================================================
@@ -178,7 +178,7 @@ design_ttest2 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz
 
 #=====================================================================================================================
 
-# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/palm 
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/palm
 
 # palm \
 # -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii \
@@ -186,12 +186,12 @@ design_ttest2 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz
 # -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
 # -d /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/05Hz_3rd_level.mat \
 # -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/05Hz_3rd_level.mat \
-# -n 5000 -T -C 3.1 -ise -corrcon -save1-p 
+# -n 5000 -T -C 3.1 -ise -corrcon -save1-p
 # # -vg /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz.grp \
 
 
 
-# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/palm 
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/palm
 
 # palm \
 # -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii \
@@ -199,13 +199,13 @@ design_ttest2 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz
 # -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
 # -d /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/10Hz_3rd_level.mat \
 # -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/10Hz_3rd_level.mat \
-# -n 5000 -T -C 3.1 -ise -corrcon -save1-p 
+# -n 5000 -T -C 3.1 -ise -corrcon -save1-p
 # # -vg /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz.grp \
 
 
 
 
-# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/palm 
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/palm
 
 # palm \
 # -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii \
@@ -213,12 +213,12 @@ design_ttest2 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz
 # -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
 # -d /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/20Hz_3rd_level.mat \
 # -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/20Hz_3rd_level.mat \
-# -n 5000 -T -C 3.1 -ise -corrcon -save1-p 
+# -n 5000 -T -C 3.1 -ise -corrcon -save1-p
 # # -vg /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz.grp \
 
 
 
-# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/palm 
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/palm
 
 # palm \
 # -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii \
@@ -226,7 +226,7 @@ design_ttest2 /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz
 # -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
 # -d /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/40Hz_3rd_level.mat \
 # -t /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/40Hz_3rd_level.mat \
-# -n 5000 -T -C 3.1 -ise -corrcon -save1-p 
+# -n 5000 -T -C 3.1 -ise -corrcon -save1-p
 # # -vg /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz.grp \
 
 
@@ -242,7 +242,7 @@ flameo \
 --dm=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.mat \
 --tc=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.con \
 --cs=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.grp \
---runmode=flame12 
+--runmode=flame12
 
 
 
@@ -259,7 +259,7 @@ flameo \
 --dm=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.mat \
 --tc=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.con \
 --cs=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.grp \
---runmode=flame12 
+--runmode=flame12
 
 
 
@@ -275,7 +275,7 @@ flameo \
 --dm=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.mat \
 --tc=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.con \
 --cs=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.grp \
---runmode=flame12 
+--runmode=flame12
 
 
 
@@ -290,68 +290,68 @@ flameo \
 --dm=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.mat \
 --tc=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.con \
 --cs=/media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.grp \
---runmode=flame12 
+--runmode=flame12
 
 
 
 
 # #================================================================================================================================
-mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/randomise 
-
-randomise \
--i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii \
--o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/randomise/05Hz_ \
--m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
--d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.mat \
--t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.con \
--n 5000 -x -T --uncorrp
-
-
-
-mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/randomise 
-
-
-randomise \
--i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii \
--o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/randomise/10Hz_ \
--m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
--d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.mat \
--t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.con \
--n 5000 -x -T --uncorrp
-
-
-
-
-mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/randomise
-
-
-
-
-randomise \
--i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii \
--o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/randomise/20Hz_ \
--m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
--d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.mat \
--t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.con \
--n 5000 -x -T --uncorrp
-
-
-
-
-
-
-
-mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/randomise
-
-
-
-
-randomise \
--i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii \
--o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/randomise/40Hz_ \
--m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
--d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.mat \
--t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.con \
--n 5000 -x -T --uncorrp
-
-
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/randomise
+#
+# randomise \
+# -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii \
+# -o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/randomise/05Hz_ \
+# -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+# -d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.mat \
+# -t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.con \
+# -n 5000 -x -T --uncorrp
+#
+#
+#
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/randomise
+#
+#
+# randomise \
+# -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii \
+# -o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/randomise/10Hz_ \
+# -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+# -d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.mat \
+# -t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.con \
+# -n 5000 -x -T --uncorrp
+#
+#
+#
+#
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/randomise
+#
+#
+#
+#
+# randomise \
+# -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii \
+# -o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/randomise/20Hz_ \
+# -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+# -d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.mat \
+# -t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.con \
+# -n 5000 -x -T --uncorrp
+#
+#
+#
+#
+#
+#
+#
+# mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/randomise
+#
+#
+#
+#
+# randomise \
+# -i /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii \
+# -o /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/randomise/40Hz_ \
+# -m /media/amr/Amr_4TB/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+# -d /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.mat \
+# -t /media/amr/Amr_4TB/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.con \
+# -n 5000 -x -T --uncorrp
+#
+#
