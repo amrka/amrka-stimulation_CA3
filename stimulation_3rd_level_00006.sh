@@ -237,7 +237,7 @@ design_ttest2 /home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/40Hz/40Hz
 flameo \
 --cope=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/05Hz/cope1_05Hz.nii \
 --vc=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/05Hz/varcope1_05Hz.nii \
---mask=/home/in/aeed/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+--mask=/home/in/aeed/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz \
 --ld=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/05Hz/flameo/ \
 --dm=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.mat \
 --tc=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_05Hz_CA3.con \
@@ -254,7 +254,7 @@ flameo \
 flameo \
 --cope=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/10Hz/cope1_10Hz.nii \
 --vc=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/10Hz/varcope1_10Hz.nii \
---mask=/home/in/aeed/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+--mask=/home/in/aeed/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz \
 --ld=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/10Hz/flameo/ \
 --dm=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.mat \
 --tc=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_10Hz_CA3.con \
@@ -270,7 +270,7 @@ flameo \
 flameo \
 --cope=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/20Hz/cope1_20Hz.nii \
 --vc=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/20Hz/varcope1_20Hz.nii \
---mask=/home/in/aeed/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+--mask=/home/in/aeed/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz \
 --ld=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/20Hz/flameo/ \
 --dm=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.mat \
 --tc=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_20Hz_CA3.con \
