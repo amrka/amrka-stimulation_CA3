@@ -285,7 +285,7 @@ flameo \
 flameo \
 --cope=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/40Hz/cope1_40Hz.nii \
 --vc=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/40Hz/varcope1_40Hz.nii \
---mask=/home/in/aeed/Work/stimulation/Anat_Template_Enhanced_Mask.nii \
+--mask=/home/in/aeed/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz \
 --ld=/home/in/aeed/Work/stimulation/stimulation_3rd_level_CA3/40Hz/flameo/ \
 --dm=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.mat \
 --tc=/home/in/aeed/Work/stimulation/1st_Level_Designs/3rd_level_design_40Hz_CA3.con \
