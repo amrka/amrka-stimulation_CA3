@@ -175,4 +175,5 @@ stimulation_1st_level_percent_change.connect([
 stimulation_1st_level_percent_change.write_graph(
     graph2use='colored', format='png', simple_form=True)
 
-stimulation_1st_level_percent_change.run('dont_resubmit_completed_jobs': True, 'max_jobs': 50})
+stimulation_1st_level_percent_change.run(plugin='SLURM', plugin_args={
+    'dont_resubmit_completed_jobs': True, 'max_jobs': 50})
