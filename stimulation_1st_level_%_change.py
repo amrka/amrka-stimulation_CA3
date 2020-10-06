@@ -70,53 +70,53 @@ templates = {
 
     'preproc_img': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_OutputDir_CA3/preproc_img/{frequency_id}_{session_id}_subj_{subject_id}/afni_2d_smoothed_maths_filt_maths.nii.gz',
     'bold_brain': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_OutputDir_CA3/bold_brain/{frequency_id}_{session_id}_subj_{subject_id}/Stim_{subject_id}_??_{frequency_id}_{session_id}_roi_masked.nii.gz',
-    'bold_mask': '/media/amr/Amr_4TB/Work/stimulation/Data_CA3/{subject_id}/EPI_{subject_id}_Mask.nii.gz'
+    'bold_mask': '/media/amr/Amr_4TB/Work/stimulation/Data_CA3/{subject_id}/EPI_{subject_id}_Mask.nii.gz',
 
     'tem2anat': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_WorkingDir_CA3/stimulation_preproc_CA3/_subject_id_{subject_id}/reg_T1_2_temp/transformInverseComposite.h5',
     'ant2func': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_WorkingDir_CA3/stimulation_preproc_CA3/_frequency_id_{frequency_id}_session_id_{session_id}_subject_id_{subject_id}/coreg/bold_2_anat_sub-{subject_id}0GenericAffine.mat',
-    'anat_img': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_WorkingDir_CA3/stimulation_preproc_CA3/_subject_id_{subject_id}/biasfield_correction_anat/Anat_{subject_id}_bet_corrected.nii.gz'}
+    'anat_img': '/media/amr/Amr_4TB/Work/stimulation/Stimulation_Preproc_WorkingDir_CA3/stimulation_preproc_CA3/_subject_id_{subject_id}/biasfield_correction_anat/Anat_{subject_id}_bet_corrected.nii.gz'
 
 }
 
 
 selectfiles = Node(SelectFiles(templates,
                                base_directory=experiment_dir),
-                   name = "selectfiles")
+                   name="selectfiles")
 # ============================================================================================================================
 # In[5]:
-datasink=Node(DataSink(), name = 'datasink')
-datasink.inputs.container=output_dir
-datasink.inputs.base_directory=experiment_dir
+datasink = Node(DataSink(), name='datasink')
+datasink.inputs.container = output_dir
+datasink.inputs.base_directory = experiment_dir
 
-substitutions=[('_subject_id_', '_subj_'), ('_session_id_', '_'), ('_frequency_id_', '')]
+substitutions = [('_subject_id_', '_subj_'), ('_session_id_', '_'), ('_frequency_id_', '')]
 
-datasink.inputs.substitutions=substitutions
+datasink.inputs.substitutions = substitutions
 
 # ============================================================================================================================
 
 
-template_brain='/media/amr/Amr_4TB/Work/October_Acquistion/anat_temp_enhanced_3.nii.gz'
-template_mask='/media/amr/Amr_4TB/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz'
-template_hpc_mask='/media/amr/Amr_4TB/Work/October_Acquistion/anat_temp_enhanced_3_hpc.nii.gz'
+template_brain = '/media/amr/Amr_4TB/Work/October_Acquistion/anat_temp_enhanced_3.nii.gz'
+template_mask = '/media/amr/Amr_4TB/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz'
+template_hpc_mask = '/media/amr/Amr_4TB/Work/October_Acquistion/anat_temp_enhanced_3_hpc.nii.gz'
 # ============================================================================================================================
 # get mean of the final image
 
-get_filtered_mean=Node(fsl.MeanImage(), name = 'filtered_img_mean')
-get_filtered_mean.inputs.dimension='T'
-get_filtered_mean.inputs.out_file='filtered_img_mean.nii.gz'
+get_filtered_mean = Node(fsl.MeanImage(), name='filtered_img_mean')
+get_filtered_mean.inputs.dimension = 'T'
+get_filtered_mean.inputs.out_file = 'filtered_img_mean.nii.gz'
 
 
 # ============================================================================================================================
 # transform the hpc mask to each subject's space
 # In[10]:
 # Merge the trasnforms
-merge_transforms=Node(Merge(2), name = 'merge_transforms')
+merge_transforms = Node(Merge(2), name='merge_transforms')
 
 
-transform_hpc_mask=Node(ants.ApplyTransforms(), name = 'transform_hpc_mask')
-transform_hpc_mask.inputs.input_image=template_hpc_mask
-transform_hpc_mask.inputs.interpolation='NearestNeighbor'
-transform_hpc_mask.inputs.invert_transform_flags=[False, True]
+transform_hpc_mask = Node(ants.ApplyTransforms(), name='transform_hpc_mask')
+transform_hpc_mask.inputs.input_image = template_hpc_mask
+transform_hpc_mask.inputs.interpolation = 'NearestNeighbor'
+transform_hpc_mask.inputs.invert_transform_flags = [False, True]
 
 
 # ============================================================================================================================
@@ -128,23 +128,23 @@ transform_hpc_mask.inputs.invert_transform_flags=[False, True]
 # scale_factor = -80.61686
 # the scale is probably off by 100x factor, because the timeseries is in hunderedth range
 # it makes sense since the voxels value are scaled 100s higher than the human data, probably from the machine
-scale_factor=-.8061686
+scale_factor = -.8061686
 
-mul_by_scaling_factor=Node(fsl.BinaryMaths(), name = 'multiply_by_scaling_factor')
-mul_by_scaling_factor.inputs.operation='mul'
-mul_by_scaling_factor.inputs.operand_value=scale_factor
-mul_by_scaling_factor.inputs.out_file='multiplied_by_scaling_factor.nii.gz'
+mul_by_scaling_factor = Node(fsl.BinaryMaths(), name='multiply_by_scaling_factor')
+mul_by_scaling_factor.inputs.operation = 'mul'
+mul_by_scaling_factor.inputs.operand_value = scale_factor
+mul_by_scaling_factor.inputs.out_file = 'multiplied_by_scaling_factor.nii.gz'
 
 # ============================================================================================================================
 # divide by mean image
-div_by_mean_img=Node(fsl.BinaryMaths(), name = 'div_by_mean_img')
-div_by_mean_img.inputs.operation='div'
-div_by_mean_img.inputs.out_file='divided_by_mean_img.nii.gz'
+div_by_mean_img = Node(fsl.BinaryMaths(), name='div_by_mean_img')
+div_by_mean_img.inputs.operation = 'div'
+div_by_mean_img.inputs.out_file = 'divided_by_mean_img.nii.gz'
 
 # ============================================================================================================================
 # fslmeants to get the timesereis
-get_percent_change_timeseries=Node(fsl.ImageMeants(), name = 'get_percent_change_timeseries')
-get_percent_change_timeseries.inputs.out_file='percent_change_timeseries.txt'
+get_percent_change_timeseries = Node(fsl.ImageMeants(), name='get_percent_change_timeseries')
+get_percent_change_timeseries.inputs.out_file = 'percent_change_timeseries.txt'
 # ====================================================================================================
 
 stimulation_1st_level_percent_change.connect([
@@ -173,6 +173,6 @@ stimulation_1st_level_percent_change.connect([
 ])
 
 stimulation_1st_level_percent_change.write_graph(
-    graph2use = 'colored', format = 'png', simple_form = True)
+    graph2use='colored', format='png', simple_form=True)
 
-stimulation_1st_level_percent_change.run('MultiProc', plugin_args = {'n_procs': 32})
+stimulation_1st_level_percent_change.run('MultiProc', plugin_args={'n_procs': 32})
