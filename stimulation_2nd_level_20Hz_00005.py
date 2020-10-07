@@ -1,4 +1,3 @@
-# In[1]:
 
 import re
 import os
@@ -58,8 +57,8 @@ infosource.iterables = [('subject_id', subject_list)]
 # functional run-s
 
 
-template_brain = '/home/in/aeed/Work/October_Acquistion/anat_temp_enhanced_3.nii.gz'
-template_mask = '/home/in/aeed/Work/October_Acquistion/anat_template_enhanced_mask_2.nii.gz'
+template_brain = '/home/in/aeed/Work/October_Acquistion/Anat_Template_Enhanced.nii.gz'
+template_mask = '/home/in/aeed/Work/October_Acquistion/Anat_Template_Enhanced_Mask.nii.gz'
 
 TR = 2.0
 no_runs = 3
@@ -91,6 +90,11 @@ templates = {
     'varcope1_20Hz_r3': '/home/in/aeed/Work/stimulation/Stimulation_1st_level_OutputDir_CA3/varcopes_1st_level/20Hz_run003_subj_{subject_id}/varcope1.nii.gz',
 
     # ==========================================================================================================================================================
+    "percent_change_r1": '/home/in/aeed/Work/stimulation/Stimulation_1st_level_WorkingDir_%_change_CA3/stimulation_1st_level_percent_change_CA3/_frequency_id_20Hz_session_id_run001_subject_id_{subject_id}/get_percent_change_timeseries/percent_change_timeseries.txt',
+    "percent_change_r2": '/home/in/aeed/Work/stimulation/Stimulation_1st_level_WorkingDir_%_change_CA3/stimulation_1st_level_percent_change_CA3/_frequency_id_20Hz_session_id_run002_subject_id_{subject_id}/get_percent_change_timeseries/percent_change_timeseries.txt',
+    "percent_change_r3": '/home/in/aeed/Work/stimulation/Stimulation_1st_level_WorkingDir_%_change_CA3/stimulation_1st_level_percent_change_CA3/_frequency_id_20Hz_session_id_run003_subject_id_{subject_id}/get_percent_change_timeseries/percent_change_timeseries.txt',
+
+
 }
 
 
@@ -310,6 +314,23 @@ varcope1_2ndlevel_2_template.inputs.output_image = 'varcope1_2ndlevel_2_template
 
 
 # ==========================================================================================================================================================
+def mean_timeseries_2nd_level(percent_change_r1, percent_change_r2, percent_change_r3):
+    import numpy as np
+    ts_1 = np.loadtxt(percent_change_r1)
+    ts_2 = np.loadtxt(percent_change_r2)
+    ts_3 = np.loadtxt(percent_change_r3)
+
+    ts_2nd_level = np.mean([ts_1, ts_2, ts_3], axis=0)
+
+    np.savetxt('mean_ts_20Hz_2nd_level.txt', ts_2nd_level)
+
+
+mean_timeseries_2nd_level = Node(name='mean_timeseries_2nd_level',
+                                 interface=Function(input_names=['percent_change_r1',
+                                                                 'percent_change_r2',
+                                                                 'percent_change_r3', ],
+                                                    function=mean_timeseries_2nd_level))
+# ==========================================================================================================================================================
 
 
 stimulation_2nd_level.connect([
@@ -377,6 +398,11 @@ stimulation_2nd_level.connect([
     (flameo_fit_copes1, varcope1_2ndlevel_2_template, [('var_copes', 'input_image')]),
     (selectfiles, varcope1_2ndlevel_2_template, [('anat_2_temp_trans', 'transforms')]),
 
+    (selectfiles, mean_timeseries_2nd_level, [('percent_change_r1', 'percent_change_r1'),
+                                              ('percent_change_r2', 'percent_change_r2'),
+                                              ('percent_change_r3', 'percent_change_r3')]),
+
+
 
 
     # ==========================================================================================
@@ -395,6 +421,7 @@ stimulation_2nd_level.connect([
 ])
 
 stimulation_2nd_level.write_graph(graph2use='colored', format='png', simple_form=True)
+
 
 stimulation_2nd_level.run(plugin='SLURM', plugin_args={
                           'dont_resubmit_completed_jobs': True, 'max_jobs': 50})
