@@ -27,7 +27,7 @@ for folder in *;do
 		cp /media/amr/Amr_4TB/Work/stimulation/Stimulation_2nd_level_WorkingDir_10Hz_CA3/stimulation_2nd_level_10Hz_CA3/_subject_id_${folder}/mean_timeseries_2nd_level/mean_ts_10Hz_2nd_level.txt \
 		/media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/10Hz/timeseries/percent_change_10Hz_${folder}.txt
 
-        cp /media/amr/Amr_4TB/Work/stimulation/Stimulation_2nd_level_WorkingDir_05Hz_CA3/stimulation_2nd_level_05Hz_CA3/_subject_id_${folder}/mean_timeseries_2nd_level/mean_ts_10Hz_2nd_level.txt \
+        cp /media/amr/Amr_4TB/Work/stimulation/Stimulation_2nd_level_WorkingDir_05Hz_CA3/stimulation_2nd_level_05Hz_CA3/_subject_id_${folder}/mean_timeseries_2nd_level/mean_ts_05Hz_2nd_level.txt \
         /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/05Hz/timeseries/percent_change_05Hz_${folder}.txt
 	fi
 
