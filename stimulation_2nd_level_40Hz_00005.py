@@ -399,6 +399,12 @@ stimulation_2nd_level.connect([
     (flameo_fit_copes1, varcope1_2ndlevel_2_template, [('var_copes', 'input_image')]),
     (selectfiles, varcope1_2ndlevel_2_template, [('anat_2_temp_trans', 'transforms')]),
 
+    (selectfiles, mean_timeseries_2nd_level, [('percent_change_r1', 'percent_change_r1'),
+                                              ('percent_change_r2', 'percent_change_r2'),
+                                              ('percent_change_r3', 'percent_change_r3')]),
+
+
+
 
 
     # ==========================================================================================
