@@ -4,7 +4,7 @@
 
 
 
-cd /media/amr/Amr_4TB/Work/stimulation/Data/
+cd /media/amr/Amr_4TB/Work/stimulation/Data_CA3/
 
 mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/40Hz/timeseries
 mkdir /media/amr/Amr_4TB/Work/stimulation/stimulation_3rd_level_CA3/20Hz/timeseries
