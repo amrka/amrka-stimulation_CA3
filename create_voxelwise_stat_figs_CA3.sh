@@ -128,8 +128,8 @@ for slice_no in {474,436,417,398,360,341,322,284};do
   --scene ortho -no   --displaySpace world --hidex --hidey    -vl 169  124 ${slice_no} \
   --hideCursor   --outfile    ${out_dir}/${frequency}_stat_CA3_${slice_no}.png   \
   ${rambmc} --displayRange 50 210  \
-  ${out_dir}/A_${frequency}_rambmc_CA3.nii.gz --displayRange 3.1  3.1 \
-  ${out_dir}/B_${frequency}_rambmc_CA3.nii.gz --cmap viridis         --displayRange 3.1  3.1
+  ${out_dir}/A_${frequency}_rambmc_CA3.nii.gz --cmap red       --displayRange 3.1  3.1 \
+  ${out_dir}/B_${frequency}_rambmc_CA3.nii.gz --cmap yellow    --displayRange 3.1  3.1
 
 
    convert ${out_dir}/${frequency}_stat_CA3_${slice_no}.png -crop 740x500+30+50  ${out_dir}/${frequency}_stat_cropped_CA3_${slice_no}.png
