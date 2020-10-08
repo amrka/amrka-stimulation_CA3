@@ -148,4 +148,4 @@ ${out_dir}/${frequency}_stat_cropped_CA3_474.png  \
 ${out_dir}/combined_${frequency}_CA3.png
 
 
-rm ${out_dir}/*_???.png
+# rm ${out_dir}/*_???.png
