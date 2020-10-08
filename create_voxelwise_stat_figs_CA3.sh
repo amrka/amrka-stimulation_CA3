@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # convert stimulation stat results to rambmc_in_anat_enh_3_space and create figures
-# you should pass the frequency from the cmd line and the script does the best
+# you should pass the frequency from the cmd line and the script does the rest
 
 frequency=$1
 
