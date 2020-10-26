@@ -39,8 +39,17 @@ done
 # change files names to contain gp name
 for folder in /media/amr/Amr_4TB/Work/stimulation/no_voxels_CA3/total_no_voxels/*;do
     python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py ${folder}   -7 -4
+    cd $folder
+    frequency=`basename $folder`
+    cat A*.txt >> A_CA3_total_${frequency}.txt
+    cat B*.txt >> B_CA3_total_${frequency}.txt
 done
+
 #
 for folder in /media/amr/Amr_4TB/Work/stimulation/no_voxels_CA3/left_no_voxels/*;do
     python3 /Users/amr/Dropbox/SCRIPTS/change_files_to_contain_gp_name_CA3.py ${folder}   -7 -4
+    cd $folder
+    frequency=`basename $folder`
+    cat A*.txt >> A_CA3_left_${frequency}.txt
+    cat B*.txt >> B_CA3_left_${frequency}.txt
 done
